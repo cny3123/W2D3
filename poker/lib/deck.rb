@@ -6,10 +6,17 @@ class Deck
   
   def initialize
     @cards = []
+    
     SUITS.each do |suit|
       VALUES.each do |value|
         @cards << Card.new(suit, value)
       end 
-    end 
+    end
+    
+    @cards.shuffle
+  end
+  
+  def take
+    @cards.pop
   end
 end
